@@ -8,7 +8,14 @@ export default function ProductRow({ product }) {
   return (
     <tr>
       <td>{name}</td>
-      <td>{product.price}</td>
+      <td>{formatCurrency(product.price)}</td>
     </tr>
   );
+}
+
+function formatCurrency(amount) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  }).format(amount);
 }

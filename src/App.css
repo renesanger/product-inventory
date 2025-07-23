@@ -61,3 +61,10 @@ td {
   padding: 2px;
   padding-right: 40px;
 }
+
+.centered {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100vh;
+}
