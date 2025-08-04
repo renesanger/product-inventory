@@ -22,7 +22,12 @@ export default function ProductTable({ products, filterText, inStockOnly }) {
       );
     }
     rows.push(<ProductRow product={product} key={product.name} />);
+    lastCategory = product.category;
   });
+
+  if (rows.length === 0) {
+    return <p>No products match your search.</p>;
+  }
 
   return (
     <table>
